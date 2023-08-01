@@ -1,7 +1,7 @@
 ThreadPool
 ==========
 
-A simple C++11 Thread Pool implementation.
+A simple C++17 Thread Pool implementation.
 
 Basic usage:
 ```c++
@@ -15,3 +15,7 @@ auto result = pool.enqueue([](int answer) { return answer; }, 42);
 std::cout << result.get() << std::endl;
 
 ```
+
+**Note:** this repo is essentially as the [original forked repo](https://github.com/progschj/ThreadPool), 
+but has been updated to remove the deprecated std::result_of method and replace it with the (now recommended)
+std::invoke_result method.
